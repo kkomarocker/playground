@@ -78,9 +78,9 @@ WSGI_APPLICATION = 'playground.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'hanna',
-        'USER': 'kkomarocker',
-        'PASSWORD': 'Dlguswo840319!'
+        'NAME': os.environ.get('NAME'),
+        'USER': os.environ.get('USER'),
+        'PASSWORD': os.environ.get('PASSWORD')
     }
 }
 

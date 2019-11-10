@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
+import os
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -17,8 +18,8 @@ class RegisterSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
 
-        if validated_data['email'] == 'hanna_10ve@hotmail.com' \
-                or validated_data['email'] == 'jayhjlee0319@gmail.com':
+        if validated_data['email'] == os.environ.get('HAEMAIL') \
+                or validated_data['email'] == os.environ.get('HJEMAIL'):
             user = User.objects.create_superuser(
                 validated_data['username'],
                 validated_data['email'],

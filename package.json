@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "webpack --mode development ./playground/frontend/src/index.js --output ./playground/frontend/static/frontend/main.js",
+    "build": "webpack --mode production ./src/index.js --output ./static/frontend/main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
